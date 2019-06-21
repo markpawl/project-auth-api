@@ -9,7 +9,6 @@ import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URL;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -21,13 +20,10 @@ import org.springframework.web.util.UriComponentsBuilder;
 import com.webage.domain.Customer;
 import com.webage.domain.CustomerFactory;
 import com.webage.domain.Token;
-import com.webage.repository.CustomersRepository;
 
 @RestController
 @RequestMapping("/register")
 public class RegisterAPI {
-	@Autowired
-	CustomersRepository repo;
 
 	@PostMapping
 	public ResponseEntity<?> registerCustomer(@RequestBody Customer newCustomer, UriComponentsBuilder uri) {

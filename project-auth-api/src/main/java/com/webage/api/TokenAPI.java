@@ -6,7 +6,6 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,7 +17,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.webage.domain.Customer;
 import com.webage.domain.CustomerFactory;
 import com.webage.domain.Token;
-import com.webage.repository.CustomersRepository;
 import com.webage.util.JWTHelper;
 
 @RestController
@@ -27,9 +25,6 @@ public class TokenAPI {
 
 	//private static Key key = AuthFilter.key;	
 	public static Token appUserToken;
-	
-	@Autowired
-	CustomersRepository repo;
 	
 	@GetMapping
 	public String getAll() {
